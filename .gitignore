@@ -1,5 +1,5 @@
 init.py
 dbnotes.txt
-sheet.xlsx
-sheet_edit2.xlsx
+*.xlsx
 __pycache__
+DBcm_t.py

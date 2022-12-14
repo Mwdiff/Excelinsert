@@ -3,13 +3,14 @@ import matplotlib.pyplot as plt
 from init import dbconfig
 
 
-def SelectHistory(symbol: str) -> 'rows':
+def SelectHistory(sku: str) -> 'rows':
     with UseDatabase(dbconfig) as cursor:
-        _SQL = """select * from phistory where symbol=%s""" % symbol
+        _SQL = """SELECT * FROM phistory WHERE symbol=%s ORDER BY Data""" % sku
         cursor.execute(_SQL)
         return cursor.fetchall()
 
-x, y = []
+x = []
+y = []
 
 sku = input('Podaj sku produktu: ')
 
